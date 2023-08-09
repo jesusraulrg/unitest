@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="jesusraulrg, mayapro">
+    <meta name="keywords" content="unitest, utec unitest">
+    <title>Ingenieria en Desarrollo y Gestión de Software | UNITEST</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/style.css"> <!--css style-->
+    <link rel="stylesheet"  href="/styles/style_carrera.css"> <!--css carrera-->
+</head>
+<body>
+    
+    <!--Barra de Navegación-->
+    <header class="navbar">
+        <h1><a href="/index.html">UNITEST</a></h1> <!-- cambiar por un logo en png-->
+        <nav>
+           <ul>
+                <li><a href="/pages/log_in.html">Iniciar Sesión</a></li>
+                <li><a href="/pages/test.html">Realizar Test</a></li>
+                <li><a href="/pages/carreras/ing_software.html">Descubrir Carreras</a></li>
+                <li><a href="/pages/about_us.html">Sobre Nosotros</a></li>
+           </ul>
+        </nav>
+    </header>
+
+    <!--Contenedor Principal-->
+    <div class="container">
+        <!--Encaberezado de la carrera-->
+        <div class="container-title">
+            <img src="/images/icons/ing_ene-renov_icon.png" alt="Icono Ing. en Desarrollo y Gestión de Software">
+            <h1>Ingeniería en Energias Renovables</h1>
+        </div>
+        <!--Descripción de la carrera-->
+        <div class="container-description">
+            <div class="description-text">
+                <h2>Objetivo</h2><br>
+                <p>
+                    Formar profesionales capaces de implementar soluciones a problemas energéticos basados en el uso y aprovechamiento de tecnologías limpias y de bajo impacto ambiental, a través del diseño, planeación y administración de                   
+                    equipos y sistemas en los ámbitos de generación alterna de energía, eficiencia energética industrial y combustibles alternos, para contribuir al desarrollo sustentable, con calidad y respeto al medio ambiente, dentro de un marco ético y humanista.
+                </p>
+            </div>
+            <div class="description-image">
+                <img src="/images/software-engineer.jpg" alt="Ingenieria en Desarrollo y Gestión de Software">
+            </div>
+        </div>
+
+        <!--Recuadro de perfil de ingreso-->
+        <div class="cuadro" onmouseover="agrandaCuadro()" onmouseout="restauraCuadro()">
+            <h2>Perfil de Ingreso</h2> <br>
+            <div class="cuadro-container">
+                <ul>
+                    <li> Bachillerato concluido con promedio mínimo de 7.0</li>
+                    <li> Capacidad de adaptación al auto-aprendizaje</li>
+                    <li>Iniciativa para la investigación</li>
+                    <li>Comunicación efectiva y el trabajo colaborativo</li>
+                    <li>Comprensión de lectura, redacción de textos</li>
+                    <li>Razonamiento lógico, manejo de software</li>
+                    <li>Organización y alto sentido de compromiso</li>
+                    <li>Participativos, creativos, propositivos</li>
+                    <li>Responsabilidad y honestidad</li>
+                    <li>Respeto por la institución, profesores, compañeros y personal de apoyo</li>
+                    <li>Conocimiento a nivel medio superior de Ciencias Sociales, Ciencias Exactas y Computación</li>
+                    <li>Pensamiento lógico, analítico, crítico y reflexivo</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Recuadro de perfil de egreso-->
+        <div class="cuadro" onmouseover="agrandaCuadro()" onmouseout="restauraCuadro()">
+            <h2>Perfil de egreso</h2> <br>
+            <div class="cuadro-container">
+                <p>El Ingeniero en Desarrollo y Gestión de Software podrá desenvolverse como:</p> <br>
+                <ul>
+                    <li>Dimensionar sistemas de generación de energía basados en energías renovables con énfasis en la especificación del sistema y selección de equipos para la producción de energía a partir de fuentes renovables</li>
+                    <li>Aplicar los principios de conversión de energía a base de biomasa para la obtención de biocombustibles orientados a la solución de problemas energéticos</li>
+                    <li>Implementar, adaptar y mantener proyectos de uso y aprovechamiento de la energía con recursos energéticos renovables para asegurar el abastecimiento de energía para futuras generaciones, considerando restricciones reales tales como económicas y medioambientales</li>
+                    <li>Adaptar sistemas de generación con energías renovables a los sistemas tradicionales de distribución de energía eléctrica</li>
+                    <li>Implementar sistemas y equipos que utilicen eficientemente la energía en beneficio de las actividades productivas de la industria</li>
+                    <li>Aplicar técnicas de medición y análisis de los procesos industriales para identificar oportunidades de optimización energética que permitan mejorar las actividades de la empresa</li>
+                    <li>Evaluar la disponibilidad y el potencial de las energías renovables como satisfactor de necesidades energéticas y su uso de manera sustentable de acuerdo con la región de aplicación</li>
+                    <li>Brindar mantenimiento preventivo y correctivo a sistemas energéticos industriales para garantizar su adecuada operación y funcionamiento</li>
+                    <li>Modelar a través de herramientas especializadas el comportamiento de sistemas de intercambio y transferencia de la energía para la optimización de los procesos</li>
+                    <li>Manejar adecuadamente herramientas computacionales como apoyo a las actividades propias de su profesión</li>
+                    <li>Actitud de responsabilidad, creatividad, iniciativa e innovación, tolerancia, liderazgo y trabajo en equipo</li>
+                    <li>Dominio de un segundo idioma a nivel intermedio-avanzado</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!--Recuadro de Caracteristicas de la carrrera-->
+        <div class="cuadro" onmousedown="agrandaCuadro()" onmouseout="restauraCuadro()">
+            <h2>Caracteristicas de la carrera</h2> <br>
+            <div class="cuadro-container">
+                <ul>
+                    <li>Modelo Educativo 70% práctico, 30% teórico</li>
+                    <li>Duración de 11 cuatrimestres</li>
+                    <li>Dos cuatrimestres de experiencia laboral / estadias profesionales</li>
+                    <li>Duración 4 años</li>
+                </ul>
+            </div>
+        </div>
+
+    </div><!--Termina el container-->
+</body>
+</html>

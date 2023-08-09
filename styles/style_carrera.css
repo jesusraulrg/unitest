@@ -1,0 +1,93 @@
+/*contenedor (body)*/
+.container{
+    background-color: azure;
+}
+
+/*encabezado (titulo-imagen)*/
+.container-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 0px;
+}
+
+/*nombre de carrera*/
+.container-title h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+/*icono de carrera*/
+.container-title img{
+    width: 120px;
+    padding-right: 10px;
+}
+
+/*descripcion de la carrera*/
+.container-description{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.description-text{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    text-align: justify;
+    align-items: center;
+    padding-left: 50px;
+    width: 40%;
+}
+
+.description-image{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.description-image img{
+    width: 600px;
+}
+
+.cuadro{
+    background-color: #f0f0f0; 
+    padding: 20px;
+    border: 2px solid #ccc;
+    width: 800px;
+    margin: 50px auto;
+    cursor: pointer; /* Cambia el cursor al pasar por encima del cuadro */
+    transition: transform 0.3s; /* Agregamos una transición de 0.3 segundos al cambiar el tamaño */
+    position: relative; /* Para que el cuadrado separado esté posicionado de manera relativa a este cuadro */
+    
+}
+
+.cuadro:hover{
+    transform: scale(1.1); /* Al pasar el cursor, agranda el cuadro al 110% de su tamaño original */
+}
+
+.cuadro h2{
+    background-color: #0d3763; /* Color de fondo para el cuadrado separado */
+    width: auto;
+    padding-left: 13px;
+    padding-right: 13px;
+    height: 50px;
+    position: absolute; /* Lo posicionamos de manera absoluta en relación con el cuadro */
+    top: -30px; /* Ubicación vertical en relación con el título */
+    left: 10px; /* Ubicación horizontal en relación con el título */
+    display: flex; /* Para centrar el texto vertical y horizontalmente */
+    justify-content: center; /* Para centrar horizontalmente */
+    align-items: center; /* Para centrar verticalmente */
+    color: white; /* Color del texto del título */
+    margin: 0;
+    font-size: 20px;
+}
+
+.cuadro-container{
+    padding-left: 50px;
+}
+
+.cuadro-container p,ul{
+    color: #333;
+}

@@ -1,0 +1,56 @@
+/*fuente importada desde google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+/*css para todas las paginas*/
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 100vw;
+}
+
+/*barra de navegación*/
+.navbar{
+    background-color: #1b3039;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 5px 70px;
+}
+
+.navbar h1 a{
+    color: #e2f1f8;
+    font-size: 40px;
+}
+
+.navbar ul{
+    list-style: none;
+    justify-content: space-between;
+}
+
+.navbar ul li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.navbar ul li:hover{
+    transform: scale(1.1);
+}
+
+.navbar ul li a{
+    font-size: 18px;
+    color: #eceff1;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover{
+    color: #2ddcd4;
+}

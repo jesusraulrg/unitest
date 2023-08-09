@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="jesusraulrg, mayapro">
+    <meta name="keywords" content="unitest, utec unitest">
+    <title>Realizar Test | UNITEST</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles/style.css"> <!--css style-->
+    <link rel="stylesheet" href="/styles/style_test.css"> <!--css test-->
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <header class="navbar">
+        <h1><a href="/index.html">UNITEST</a></h1> <!-- cambiar por un logo en png-->
+        <nav>
+           <ul>
+                <li><a href="/pages/log_in.html">Iniciar Sesión</a></li>
+                <li><a href="/pages/test.html">Realizar Test</a></li>
+                <li><a href="/pages/carreras/ing_software.html">Descubrir Carreras</a></li>
+                <li><a href="/pages/about_us.html">Sobre Nosotros</a></li>
+           </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>TEST DE ORIENTACIÓN VOCACIONAL</h2>
+        <form action="/database/conection_test.php" method="post">
+            
+            <div class="pregunta-test">
+                <p>1. ¿Aceptarias trabajar escribiendo artículos en la sección ecónomica de un diario?</p>
+                <label><input type="radio" name="pregunta1" id="pregunta1" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta1" id="pregunta1" value="0" required>No</label>
+            </div>
+            
+            <div class="pregunta-test">
+                <p>2. ¿Te ofrecerías para organizar la despedida de soltero de uno de tus amigos?</p>
+                <label><input type="radio" name="pregunta2" id="pregunta2" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta2" id="pregunta2" value="0" required>No</label>    
+            </div>
+    
+            <div class="pregunta-test">
+                <p>3. ¿Te gustaría dirigir/crear un proyecto de urbanización en tu estado?</p>
+                <label><input type="radio" name="pregunta3" id="pregunta3" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta3" id="pregunta3" value="0" required>No</label>    
+            </div>
+    
+            <div class="pregunta-test">
+                <p>4. ¿A una frustración siempre opones un pensamiento positivo?</p>
+                <label><input type="radio" name="pregunta4" id="pregunta4" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta4" id="pregunta4" value="0" required>No</label>    
+            </div>
+    
+            <div class="pregunta-test">
+                <p>5. ¿Te dedicarías a socorrer a personas accidentadas o atacadas por asaltantes?</p>
+                <label><input type="radio" name="pregunta5" id="pregunta5" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta5" id="pregunta5" value="0" required>No</label>    
+            </div>
+    
+            <div class="pregunta-test">
+                <p>6. ¿Cuando eras chico, te interesaba saber cómo estaban construidos tus juguetes?</p>
+                <label><input type="radio" name="pregunta6" id="pregunta6" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta6" id="pregunta6" value="0" required>No</label>    
+            </div>
+    
+            <div class="pregunta-test">
+                <p>7. ¿Te interesan más los misterios de la naturaleza que los secretos de la tecnología?</p>
+                <label><input type="radio" name="pregunta7" id="pregunta7" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta7" id="pregunta7" value="0" required>No</label>    
+            </div>
+    
+            <div class="pregunta-test">
+                <p>8. ¿Escuchas atentamente los problemas que te plantean tus amigos?</p>
+                <label><input type="radio" name="pregunta8" id="pregunta8" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta8" id="pregunta8" value="0" required>No</label>    
+            </div>
+    
+            <div class="pregunta-test">
+                <p>9. ¿Te ofrecerías para explicar a tus compañeros un determinado tema que ellos no entendieron?</p>
+                <label><input type="radio" name="pregunta9" id="pregunta9" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta9" id="pregunta9" value="0" required>No</label>    
+            </div>
+    
+            <div class="pregunta-test">
+                <p>10. ¿Eres exigente y crítico con tu equipo de trabajo?</p>
+                <label><input type="radio" name="pregunta10" id="pregunta10" value="1" required>Si</label>
+                <label><input type="radio" name="pregunta10" id="pregunta10" value="0" required>No</label>    
+            </div>
+    
+            <!-- Botón de envío con mensaje emergente -->
+            <button type="submit" class="boton" onclick="mostrarMensaje('Respuestas enviadas correctamente.');">Enviar respuestas</button>
+    
+            <!-- Div para mostrar el mensaje -->
+            <div id="mensajeDiv"></div>
+        </form>
+    </div> <!--cierre de contenedor principal-->
+
+
+  
+    <!-- Scrip para validar -->
+    <script>
+    function validarFormulario() {
+        var preguntas = document.querySelectorAll('fieldset');
+        var todasRespondidas = true;
+
+        preguntas.forEach(function(pregunta) {
+            var radios = pregunta.querySelectorAll('input[type="radio"]');
+            var respondida = Array.from(radios).some(function(radio) {
+                return radio.checked;
+            });
+
+            if (!respondida) {
+                todasRespondidas = false;
+                return;
+            }
+        });
+
+        if (!todasRespondidas) {
+            alert("Por favor, responde todas las preguntas antes de enviar el formulario.");
+            return false;
+        }
+        return true;
+    }
+    </script>
+
+
+</body>
+</html>
+
