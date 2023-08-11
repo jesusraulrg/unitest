@@ -7,19 +7,19 @@
     <meta name="keywords" content="unitest, utec unitest">
     <title>Registrate | UNITEST</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles/style.css"> <!--css style-->
-    <link rel="stylesheet" href="/styles/style_sign_up.css"> <!--css registro-->
+    <link rel="stylesheet" href="../styles/style.css"> <!--css style-->
+    <link rel="stylesheet" href="../styles/style_sign_up.css"> <!--css registro-->
 </head>
 <body>
     <!--Barra de Navegación-->
     <header class="navbar">
-        <h1><a href="/index.html">UNITEST</a></h1> <!-- cambiar por un logo en png-->
+        <h1><a href="../index.html">UNITEST</a></h1> <!-- cambiar por un logo en png-->
         <nav>
            <ul>
-                <li><a href="/pages/log_in.html">Iniciar Sesión</a></li>
-                <li><a href="/pages/test.html">Realizar Test</a></li>
-                <li><a href="/pages/carreras/ing_software.html">Descubrir Carreras</a></li>
-                <li><a href="/pages/about_us.html">Sobre Nosotros</a></li>
+                <li><a href="../pages/log_in.html">Iniciar Sesión</a></li>
+                <li><a href="../pages/test.html">Realizar Test</a></li>
+                <li><a href="../pages/carreras/ing_software.html">Descubrir Carreras</a></li>
+                <li><a href="../pages/about_us.html">Sobre Nosotros</a></li>
            </ul>
         </nav>
     </header>
@@ -29,7 +29,7 @@
         <div class="register">
             <h2>Crea tu Cuenta</h2>
             <!--Formulario de Registro-->
-            <form action="/database/sign_up.php" method="post">
+            <form action="../database/sign_up.php" method="post">
                 <div class="register_pregunta">
                     <label for="nombre">Nombre(s):</label>
                     <input type="text" name="nombre" id="nombre" required>
@@ -62,7 +62,7 @@
                     <input type="password" name="password" id="password" required>
                 </div>
                 <div class="submit_button">
-                    <input type="submit" value="Registrarse">
+                    <input type="submit" name="Registrarse" value="Registrarse">
                 </div>
             </form>
         </div>

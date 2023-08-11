@@ -1,3 +1,5 @@
+CREATE DATABASE unitest;
+
 CREATE TABLE IF NOT EXISTS usuarios(
     id_usuario integer PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(40) not null,
@@ -6,7 +8,7 @@ CREATE TABLE IF NOT EXISTS usuarios(
     edad integer not null,
     genero varchar(15) not null,
     email varchar(60) not null,
-    password varchar(20) not null
+    password varchar(500) not null
 );
 
 CREATE TABLE IF NOT EXISTS test(
@@ -15,8 +17,14 @@ CREATE TABLE IF NOT EXISTS test(
     pregunta2 integer,
     pregunta3 integer,
     pregunta4 integer,
-    c integer AS (pregunta1+pregunta3),
-    h integer AS (pregunta2+pregunta4)
+    pregunta5 integer,
+    pregunta6 integer,
+    pregunta7 integer,
+    pregunta8 integer,
+    pregunta9 integer,
+    pregunta10 integer,
+    c integer AS (pregunta1+pregunta3+pregunta5+pregunta7+pregunta9),
+    h integer AS (pregunta2+pregunta4+pregunta6+pregunta8+pregunta10)
 );
 
 

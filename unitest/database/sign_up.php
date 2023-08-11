@@ -1,5 +1,5 @@
 <?php
-// Se utiliza para llamar al archivo que contine la conexion a la base de datos
+// Se utiliza para llamar al archivo que contiene la conexion a la base de datos
 require 'conection.php';
 
 // Validamos que el formulario y que el boton registro haya sido presionado
