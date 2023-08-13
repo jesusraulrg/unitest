@@ -91,3 +91,72 @@
 .cuadro-container p,ul{
     color: #333;
 }
+
+
+/* Medidas para tamañano de pantalla *responsive*/
+
+@media (max-width: 1200px) {
+    .container-title {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-title img {
+        width: 100px;
+        padding-right: 0;
+        padding-bottom: 10px;
+    }
+
+    .container-title h1 {
+        font-size: 40px;
+        margin: 10px 0;
+    }
+
+    .container-description {
+        flex-direction: column;
+    }
+
+    .description-text,
+    .description-image {
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .description-text {
+        padding-left: 0;
+    }
+
+    .description-image img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .cuadro {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    .cuadro h2 {
+        font-size: 18px;
+        top: -20px;
+        left: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-title h1 {
+        font-size: 30px;
+    }
+
+    .description-text {
+        font-size: 14px;
+        padding-left: 20px;
+    }
+
+    .cuadro h2 {
+        font-size: 16px;
+    }
+}
+

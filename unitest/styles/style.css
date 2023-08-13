@@ -54,3 +54,31 @@ body{
 .navbar ul li a:hover{
     color: #2ddcd4;
 }
+
+/*responsive de la barra de navegación*/
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column; /* Cambia la dirección de flex a columna */
+        padding: 29px; /* Ajusta el relleno */
+        text-align: center;
+    }
+
+    .navbar h1 a {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: row; /* Vuelve a la dirección de flex a fila */
+        margin-top: 10px;
+    }
+
+    .navbar ul li {
+        padding: 0px 10px; /* Ajusta el relleno */
+    }
+}
+
+
+
+
