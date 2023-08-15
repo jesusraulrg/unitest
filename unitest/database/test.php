@@ -24,7 +24,8 @@ if (isset($_POST['submitForm'])) {
     $stmt->bind_param($types, ...array_map(function($i) { return $_POST["pregunta$i"]; }, range(1, 98)));
     
     if ($stmt->execute()) {
-        echo "Respuestas almacenadas exitosamente.";
+        header("Location: ../pages/resultado_test.html");
+        exit();
     } else {
         echo "Error al almacenar respuestas: " . $stmt->error;
     }

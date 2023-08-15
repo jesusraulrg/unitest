@@ -1,0 +1,127 @@
+<?php
+$servername = "localhost";
+$username = "jesus";
+$password = "I[VBMX-h3WHOW!Tw";
+$dbname = "unitest";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Ejecutar consulta
+$query = "SELECT id_test, max_variable FROM (
+    SELECT id_test,
+           CASE
+               WHEN c >= h AND c >= a AND c >= s AND c >= i AND c >= d AND c >= e THEN 'c'
+               WHEN h >= c AND h >= a AND h >= s AND h >= i AND h >= d AND h >= e THEN 'h'
+               WHEN a >= c AND a >= h AND a >= s AND a >= i AND a >= d AND a >= e THEN 'a'
+               WHEN s >= c AND s >= h AND s >= a AND s >= i AND s >= d AND s >= e THEN 's'
+               WHEN i >= c AND i >= h AND i >= a AND i >= s AND i >= d AND i >= e THEN 'i'
+               WHEN d >= c AND d >= h AND d >= a AND d >= s AND d >= i AND d >= e THEN 'd'
+               ELSE 'e'
+           END AS max_variable,
+           ROW_NUMBER() OVER(PARTITION BY id_test ORDER BY
+               CASE max_variable
+                   WHEN 'c' THEN c
+                   WHEN 'h' THEN h
+                   WHEN 'a' THEN a
+                   WHEN 's' THEN s
+                   WHEN 'i' THEN i
+                   WHEN 'd' THEN d
+                   ELSE e
+               END DESC) AS row_num
+    FROM test
+) ranked
+WHERE row_num = 1";
+
+$result = $conn->query($query);
+
+// Obtener el resultado
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    echo "El registro con el ID " . $row["id_test"] . " tiene la variable máxima: " . $row["max_variable"];
+} else {
+    echo "No se encontraron resultados.";
+}
+
+// Cerrar conexión
+$conn->close();
+?>
+
+
+
+
+
+///////////
+
+
+
+
+
+<?php
+$servername = "localhost";
+$username = "jesus";
+$password = "I[VBMX-h3WHOW!Tw";
+$dbname = "unitest";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+$query = "SELECT id_test, max_variable
+    FROM (
+        SELECT id_test,
+               CASE
+                   WHEN c >= h AND c >= a AND c >= s AND c >= i AND c >= d AND c >= e THEN 'c'
+                   WHEN h >= c AND h >= a AND h >= s AND h >= i AND h >= d AND h >= e THEN 'h'
+                   WHEN a >= c AND a >= h AND a >= s AND a >= i AND a >= d AND a >= e THEN 'a'
+                   WHEN s >= c AND s >= h AND s >= a AND s >= i AND s >= d AND s >= e THEN 's'
+                   WHEN i >= c AND i >= h AND i >= a AND i >= s AND i >= d AND i >= e THEN 'i'
+                   WHEN d >= c AND d >= h AND d >= a AND d >= s AND d >= i AND d >= e THEN 'd'
+                   ELSE 'e'
+               END AS max_variable
+        FROM (
+            SELECT id_test,
+                   c, h, a, s, i, d, e,
+                   CASE
+                       WHEN c >= h AND c >= a AND c >= s AND c >= i AND c >= d AND c >= e THEN 'c'
+                       WHEN h >= c AND h >= a AND h >= s AND h >= i AND h >= d AND h >= e THEN 'h'
+                       WHEN a >= c AND a >= h AND a >= s AND a >= i AND a >= d AND a >= e THEN 'a'
+                       WHEN s >= c AND s >= h AND s >= a AND s >= i AND s >= d AND s >= e THEN 's'
+                       WHEN i >= c AND i >= h AND i >= a AND i >= s AND i >= d AND i >= e THEN 'i'
+                       WHEN d >= c AND d >= h AND d >= a AND d >= s AND d >= i AND d >= e THEN 'd'
+                       ELSE 'e'
+                   END AS max_variable
+            FROM test
+        ) AS intermediate
+    ) AS ranked
+    ORDER BY 
+        CASE max_variable
+            WHEN 'c' THEN c
+            WHEN 'h' THEN h
+            WHEN 'a' THEN a
+            WHEN 's' THEN s
+            WHEN 'i' THEN i
+            WHEN 'd' THEN d
+            ELSE e
+        END DESC
+    LIMIT 1;
+";
+
+$result = $conn->query($query);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    echo "El registro con el ID " . $row["id_test"] . " tiene la variable máxima: " . $row["max_variable"];
+} else {
+    echo "No se encontraron resultados.";
+}
+
+$conn->close();
+?>

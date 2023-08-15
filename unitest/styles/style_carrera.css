@@ -1,6 +1,7 @@
 /*contenedor (body)*/
 .container{
     background-color: azure;
+    padding-bottom: 40px;
 }
 
 /*encabezado (titulo-imagen)*/
