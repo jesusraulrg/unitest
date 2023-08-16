@@ -24,8 +24,32 @@ if (isset($_POST['submitForm'])) {
     $stmt->bind_param($types, ...array_map(function($i) { return $_POST["pregunta$i"]; }, range(1, 98)));
     
     if ($stmt->execute()) {
-        header("Location: ../pages/resultado_test.html");
-        exit();
+        // Obtener los valores de c, h, a, s, i, d y e
+        $result = $conn->query("SELECT c, h, a, s, i, d, e FROM test ORDER BY id_test DESC LIMIT 1");
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $values = array_values($row);
+
+            // Encontrar el índice del valor máximo
+            $maxIndex = array_search(max($values), $values);
+
+            // Determinar a qué página redirigir
+            $pages = array(
+                'c' => '../pages/chaside/c.html',
+                'h' => '../pages/chaside/h.html',
+                'a' => '../pages/chaside/a.html',
+                's' => '../pages/chaside/s.html',
+                'i' => '../pages/chaside/i.html',
+                'd' => '../pages/chaside/d.html',
+                'e' => '../pages/chaside/e.html'
+            );
+
+            $redirectTo = $pages[array_keys($row)[$maxIndex]];
+            header("Location: $redirectTo");
+            exit();
+        } else {
+            echo "Error al obtener resultados: " . $conn->error;
+        }
     } else {
         echo "Error al almacenar respuestas: " . $stmt->error;
     }

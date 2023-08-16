@@ -1,14 +1,14 @@
 CREATE DATABASE unitest;
 
 CREATE TABLE IF NOT EXISTS usuarios(
-    id_usuario integer PRIMARY KEY AUTO_INCREMENT,
+    id_usuario integer UNIQUE AUTO_INCREMENT,
     nombre varchar(40) not null,
     primer_apellido varchar(40) not null,
     segundo_apellido varchar(40),
     edad integer not null,
     genero varchar(15) not null,
-    email varchar(60) not null,
-    password varchar(500) not null
+    email varchar(60) not null PRIMARY KEY,
+    password varchar(100) not null
 );
 
 CREATE TABLE IF NOT EXISTS test(
@@ -119,18 +119,3 @@ CREATE TABLE IF NOT EXISTS test(
     d integer AS (pregunta5+pregunta14+pregunta24+pregunta31+pregunta37+pregunta48+pregunta58+pregunta65+pregunta73+pregunta84+pregunta13+pregunta18+pregunta43+pregunta66),
     e integer AS (pregunta17+pregunta32+pregunta35+pregunta42+pregunta49+pregunta61+pregunta68+pregunta77+pregunta88+pregunta93+pregunta7+pregunta55+pregunta79+pregunta94)
 );
-
-
-
-
-/*
-
-    id_usuario integer not null REFERENCES usuarios(id_usuario),
-
-
-CREATE VIEW IF NOT EXISTS vista_resultados AS
-SELECT test.id_test, usuarios.email
-FROM test
-JOIN 
-);
-*/

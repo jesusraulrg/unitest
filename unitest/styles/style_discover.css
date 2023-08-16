@@ -1,0 +1,52 @@
+.title{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.carreras {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    flex-grow: 1; /* El menú ocupará el espacio disponible */
+  }
+  
+  .carrera-individual {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    flex: 1; /* Distribuye el espacio disponible entre los elementos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carrera-individual img {
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+  
+  .carrera-individual h2 {
+    margin: 0;
+  }
+  
+  .carrera-individual a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+    flex: 1; /* Ajusta el espacio ocupado por el enlace */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .carrera-individual a:hover {
+    color: #007bff;
+  }
+  

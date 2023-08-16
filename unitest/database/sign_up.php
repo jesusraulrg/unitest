@@ -20,7 +20,8 @@ $sql = "INSERT INTO usuarios(nombre, primer_apellido, segundo_apellido, edad, ge
 $resultado = mysqli_query($conection,$sql);
 if($resultado) {
     // Iserción correcta
-    echo "¡Se insertaron los datos correctamente!";
+    header("Location: ../pages/test.html");
+    exit();
 } else {
     // Iserción fallida
     echo "¡No se puede insertar la informacion!"."<br>";
