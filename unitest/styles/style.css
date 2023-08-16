@@ -1,6 +1,5 @@
 /*fuente importada desde google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
-
 /*css para todas las paginas*/
 *{
     margin: 0;
@@ -55,8 +54,8 @@
 
 @media (max-width: 800px) {
     .navbar {
-        flex-direction: column; /* Cambia la dirección de flex a columna */
-        padding: 29px; /* Ajusta el relleno */
+        flex-direction: column;
+        padding: 29px;
         text-align: center;
     }
 
@@ -66,12 +65,12 @@
     }
 
     .navbar ul {
-        flex-direction: row; /* Vuelve a la dirección de flex a fila */
+        flex-direction: row;
         margin-top: 10px;
     }
 
     .navbar ul li {
-        padding: 0px 10px; /* Ajusta el relleno */
+        padding: 0px 10px;
     }
 }
 

@@ -1,6 +1,6 @@
 /*contenedor (body)*/
 .container{
-    background-color: azure;
+    background-color: #f4f4f4;
     padding-bottom: 40px;
 }
 
@@ -21,35 +21,30 @@
 /*icono de carrera*/
 .container-title img{
     width: 120px;
-    padding-right: 10px;
 }
 
 /*descripcion de la carrera*/
 .container-description{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
 }
 
-.description-text{
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
+.description-text h2{
+    text-align: center;
+}
+
+.description-text p{
+    width: 600px;
     text-align: justify;
-    align-items: center;
-    padding-left: 50px;
-    width: 40%;
-}
-
-.description-image{
-    display: flex;
-    width: 60%;
-    justify-content: center;
-    align-items: center;
 }
 
 .description-image img{
     width: 600px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 30px rgba(31, 61, 55, 0.206);
 }
 
 .cuadro{
@@ -58,29 +53,28 @@
     border: 2px solid #ccc;
     width: 800px;
     margin: 50px auto;
-    cursor: pointer; /* Cambia el cursor al pasar por encima del cuadro */
-    transition: transform 0.3s; /* Agregamos una transición de 0.3 segundos al cambiar el tamaño */
-    position: relative; /* Para que el cuadrado separado esté posicionado de manera relativa a este cuadro */
-    
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
 }
 
 .cuadro:hover{
-    transform: scale(1.1); /* Al pasar el cursor, agranda el cuadro al 110% de su tamaño original */
+    transform: scale(1.1);
 }
 
 .cuadro h2{
-    background-color: #0d3763; /* Color de fondo para el cuadrado separado */
+    background-color: #0d3763;
     width: auto;
     padding-left: 13px;
     padding-right: 13px;
     height: 50px;
-    position: absolute; /* Lo posicionamos de manera absoluta en relación con el cuadro */
-    top: -30px; /* Ubicación vertical en relación con el título */
-    left: 10px; /* Ubicación horizontal en relación con el título */
-    display: flex; /* Para centrar el texto vertical y horizontalmente */
-    justify-content: center; /* Para centrar horizontalmente */
-    align-items: center; /* Para centrar verticalmente */
-    color: white; /* Color del texto del título */
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
     margin: 0;
     font-size: 20px;
 }
@@ -93,8 +87,29 @@
     color: #333;
 }
 
+.videos{
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 40px;
+}
 
-/* Medidas para tamañano de pantalla *responsive*/
+.videos h2{
+    padding-bottom: 15px;
+}
+
+.videos p{
+    padding-bottom: 25px;
+}
+
+.videos-youtube{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
 
 @media (max-width: 1200px) {
     .container-title {
@@ -114,18 +129,26 @@
     }
 
     .container-description {
-        flex-direction: column;
-    }
-
-    .description-text,
-    .description-image {
-        width: 100%;
-        padding: 10px 0;
-        text-align: center;
+        flex-direction: row;
     }
 
     .description-text {
-        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .description-image {
+        display: flex;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
     }
 
     .description-image img {
@@ -154,10 +177,10 @@
     .description-text {
         font-size: 14px;
         padding-left: 20px;
+        padding-right: 20px;
     }
 
     .cuadro h2 {
         font-size: 16px;
     }
 }
-
